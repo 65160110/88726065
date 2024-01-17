@@ -3,16 +3,16 @@ body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
     margin: 20px;
-    background-color: #f8f8f8;
+    background-color: #397dfc;
 }
 
 h1 {
     color: #333;
     font-size: 24px;
-    background-color: #bbffb2;
+    background-color: #ec9d53;
     padding: 15px;
     border-radius: 5px;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 81, 0);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -23,7 +23,7 @@ ul {
 }
 
 li {
-    background-color: #fff;
+    background-color: #084bc7;
 
     padding: 15px;
     margin: 10px 0;
@@ -36,7 +36,7 @@ li {
 }
 
 li.completed {
-    background-color: #d4edda;
+    background-color: #084bc7;
     text-decoration: line-through;
 }
 
@@ -51,7 +51,7 @@ input[type="text"] {
 
 button {
     padding: 12px 24px;
-    background-color: #ffaced;
+    background-color: #ee8835;
     color: white;
     border: none;
     border-radius: 8px;
