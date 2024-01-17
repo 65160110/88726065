@@ -61,4 +61,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // แสดงรายการ Todo คร้ังแรก
     renderTodoList();
+    
+    // scripts มีไว้กำหนดการทำงานของคำสั่งต่างๆของ HTML
 });
