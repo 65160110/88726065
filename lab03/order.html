@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>ใบสมัครงาน</title>
+        <link rel="stylesheet" type="text/css" href="css/mystyle.css">
+    </head>
+    <body>
+        <header class="header">
+            <h1>ใบสมัครงาน</h2>
+        </header>
+
+        <form action="process-order.php" method="post">
+            <table>
+                <tr>
+                    <td><lable for="firstname"><B>ชื่อ *</B></lable></td>
+                    <td><lable for="lastname"><B>นามสกุล *</B></lable></td>
+                </tr>
+                <tr>
+                    <td align="center"><input type="text" id="firstname" name="firstname" required /></td>
+                    <td><input type="text" id="lastname" name="lastname" required /></td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td><lable for="email"><B>อีเมล *</B></lable></td>
+                </tr>
+                <tr>
+                    <td><input type="email" id="email" name="email" size="46" required /></td>
+                </tr>
+                <tr>
+                    <td><lable for="port"><B>เว็บไซต์ผลงาน</B></lable></td>
+                </tr>
+                <tr>
+                    <td><input type="ulr" id="port" name="port" value="http://" size="46" required /></td>
+                </tr>
+                <tr>
+                    <td><lable for="port"><B>ตำแหน่งที่ต้องการสมัคร *</B></lable></td>
+                </tr>
+                <tr>
+                    <td><input type="text" id="job" name="job" size="46" required /></td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td><lable for="firstname"><B>เงินเดือนที่ต้องการ</B></lable></td>
+                    <td><lable for="lastname"><B>จะเริ่มงานได้เมื่อไหร่</B></lable></td>
+                </tr>
+                <tr>
+                    <td><input type="text" id="salary" name="salary" required /></td>
+                    <td><input type="text" id="start" name="start" required /></td>
+                </tr>
+                <tr>
+                    <td><lable for="firstname"><B>โทรศัพท์มือถือ*</B></lable></td>
+                    <td><lable for="lastname"><B>โทรศัพท์บ้าน</B></lable></td>
+                </tr>
+                <tr>
+                    <td><input type="text" id="phone" name="phone" required /></td>
+                    <td><input type="text" id="homephone" name="homephone" required /></td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td><label dor="free-will"><B>คุณสะดวกที่จะย้ายที่อยู่หรือไม่</B></label></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="radio" id="convenient" nae="free-will" value="convenient" required />
+                        <label for="credt_card">สะดวก</label>
+                        <input type="radio" id="inconvenient" name="free-will" value="inconvenient" required />
+                        <label for="debit_card">ไม่สะดวก</label>
+                        <input type="radio" id="not-sure" name="free-will" value="not-sure" required />
+                        <label for="paypl">ไม่แน่ใจ</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><lable for="port"><B>ลักษณะงานที่ทำในที่ทำงานล่าสุด</B></lable></td>
+                </tr>
+                <tr>
+                    <td colspan="50"><input type="text" id="ex-job" name="ex-job" size="46" required /></td>
+                </tr>
+                <tr>
+                    <td><lable for="port"><B>คำถาม</B></lable></td>
+                </tr>
+                <tr>
+                    <td><textarea name="question" id="question" cols="48" rows="10"> </textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center">
+                        <button type="submit">ส่งใบสมัคร</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <footer">
+            <a class="bottom footer" href="main.html">ถอยกลับ</a>
+        </footer>
+    </body>
+</html>
