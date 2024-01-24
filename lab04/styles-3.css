@@ -4,11 +4,11 @@ body {
     padding: 0;
 }
 
-.grid-contianer {
+.grid-container {
     display: grid;
     grid-template-columns: 1fr 3fr;
     grid-template-rows: auto;
-    grid-area: 
+    grid-template-areas: 
         "header header"
         "nav main"
         "sidebar main"
@@ -21,7 +21,7 @@ body {
     grid-area: header;
     background-color: #333;
     color: white;
-    padding: lem;
+    padding: 1em;
     text-align: center;
 }
 
@@ -29,32 +29,32 @@ body {
     grid-area: nav;
     background-color: #444;
     color: white;
-    padding: lem;
+    padding: 1em;
 }
 
 .main {
     grid-area: main;
     background-color: #ddd;
-    padding: lem;
+    padding: 1em;
 }
 
 .sidebar {
     grid-area: sidebar;
     background-color: #bbb;
-    padding: lem;
+    padding: 1em;
 }
 
 .footer {
     grid-area: footer;
     background-color: #666;
     color: white;
-    padding: lem;
+    padding: 1em;
     text-align: center;
 }
 
 /* Responsive Design */
-@media screen and (max-widht: 600px) {
-    .grid-contianer {
+@media screen and (max-width: 600px) {
+    .grid-container {
         grid-template-columns: 1fr;
         grid-template-areas: 
             "header"

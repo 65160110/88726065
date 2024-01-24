@@ -15,9 +15,11 @@ main {
     max-width: 1200px;
     margin: 0 auto;
 }
+
 section.content {
     padding: 20px;
 }
+
 img {
     max-width: 100%;
 }
