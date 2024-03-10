@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Add/Edit Book</title>
+    </head>
+
+    <body>
+        <header><h1 align="center">Book DB :: Add / Edit</h1></header> <hr><br>
+        
+        <table>
+            <tr>
+                <td><input type="hidden" id="id"></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="book_name" size="30" placeholder="ชื่อหนังสือ"><br></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="book_price" placeholder="ราคา"><br></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="author_name1" placeholder="ผู้แต่ง-1"><br></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="author_name2" placeholder="ผู้แต่ง-2"><br></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="author_name3" placeholder="ผู้แต่ง-3"></td>
+            </tr>
+            <tr>
+                <td style="text-align: center"><button onclick="addeditBook()">บันทึก</button></td>
+            </tr>
+        </table>
+
+        <script>
+            var books;
+
+            function addeditBook() {
+                addBook();
+                window.location.href = "search.html";
+            }
+
+            function findMaxBookId() {
+                var max = 0;
+                for (var i = 0; i < books.length; i++) {
+                    if (books[i].id > max) {
+                        max = books[i].id;
+                    }
+                }
+                return max;
+            }
+
+            function addBook() {
+                var id = document.getElementById("id").value;
+                var name = document.getElementById("book_name").value;
+                var price = document.getElementById("book_price").value;
+                var author_name1 = document.getElementById("author_name1").value;
+                var author_name2 = document.getElementById("author_name2").value;
+                var author_name3 = document.getElementById("author_name3").value;
+
+                if (id == "") {
+                    id = findMaxBookId() + 1;
+                    var book = {
+                        id: id,
+                        name: name,
+                        price: price,
+                        author_name1: author_name1,
+                        author_name2: author_name2,
+                        author_name3: author_name3
+                    };
+                    books.push(book);
+                }else {
+                    for (var i = 0; i < books.length; i++) {
+                        if (books[i].id == id) {
+                            books[i].name = name;
+                            books[i].price = price;
+                            books[i].author_name1 = author_name1;
+                            books[i].author_name2 = author_name2;
+                            books[i].author_name3 = author_name3;
+                        }
+                    }
+                }
+                localStorage.setItem("books", JSON.stringify(books));
+
+                document.getElementById("id").value = "";
+                document.getElementById("book_name").value = "";
+                document.getElementById("book_price").value = "";
+                document.getElementById("author_name1").value = "";
+                document.getElementById("author_name2").value = "";
+                document.getElementById("author_name3").value = "";
+                document.getElementById("book_name").focus();
+            }
+
+            var books = JSON.parse(localStorage.getItem("books"));
+            if (books == null) {
+                books = [];
+            }
+
+            var urlParams = new URLSearchParams(window.location.search);
+            var id = urlParams.get("id");
+            if (id) {
+                var bookToEdit = books.find(function (book) {
+                    return book.id == id;
+                });
+                if (bookToEdit) {
+                    document.getElementById("id").value = bookToEdit.id;
+                    document.getElementById("book_name").value = bookToEdit.book_name;
+                    document.getElementById("book_price").value = bookToEdit.book_price;
+                    document.getElementById("author_name1").value = bookToEdit.author_name1;
+                    document.getElementById("author_name2").value = bookToEdit.author_name2;
+                    document.getElementById("author_name3").value = bookToEdit.author_name3;
+                }
+            }
+        </script>
+    </body>
+</html>
